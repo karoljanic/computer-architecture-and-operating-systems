@@ -1,0 +1,9 @@
+sleep 1000 &
+
+jobs -l
+
+fg numer
+bg numer
+
+kill pid / %numer
+kill -9 pid

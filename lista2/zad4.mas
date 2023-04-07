@@ -1,0 +1,166 @@
+/ Printing Value From Accumulator in HEX
+/ Karol Janic
+/ Output Mode = UNICODE
+
+                        Input
+                    	Jns to_hex
+                    	HALT
+
+to_hex,  				HEX 000
+						Store TMP
+						Load ZERO
+						Store CURR_IDX
+                        Store CURR_PTR
+
+div_loop_cond,			Load CURR_IDX
+						Subt BUFF_SIZE
+                        Skipcond 400
+                        Jump div_loop_body
+                        Jump div_loop_end
+
+div_loop_body,			Load TMP
+						JnS get_4_bites
+                        Store TMP
+						Load R
+
+                        / save reminder to buffer
+                        Load BUF_PTR
+                        Add CURR_IDX
+						Store CURR_PTR
+                        Load R
+                        StoreI CURR_PTR
+
+						Load CURR_IDX
+						Add ONE
+                        Store CURR_IDX
+                        Jump div_loop_cond
+
+div_loop_end,			Load ZERO_CHAR
+						Output
+                        Load X_CHAR
+						Output
+						Load BUFF_SIZE
+						Store CURR_IDX
+
+print_loop_cond,		Load CURR_IDX
+                        Skipcond 400
+                        Jump print_loop_body
+						Jump print_loop_end
+
+/ print 4 bits in HEX
+print_loop_body,		Load BUF_PTR
+						Add CURR_IDX
+                        Subt ONE
+                        Store CURR_PTR
+                        LoadI CURR_PTR
+                        Add LOOKUP_PTR
+                        Store CURR_PTR
+                        LoadI CURR_PTR
+                        Store TMP
+
+                        Subt ZERO_CHAR
+                        Skipcond 400
+                        Jump print_out
+                        Jump check_written_sum
+
+print_out,              Load TMP
+						Output
+                        Load CHARS_WRITTEN
+						Add ONE
+                        Store CHARS_WRITTEN
+                        Jump increment_index
+
+check_written_sum,		Load CHARS_WRITTEN
+						Skipcond 400
+                        Jump print_out
+						Jump increment_index
+
+increment_index,		Load CURR_IDX
+                        Subt ONE
+                        Store CURR_IDX
+                        Jump print_loop_cond
+
+print_loop_end,			Load CHARS_WRITTEN
+						Skipcond 400
+						JumpI to_hex
+                        Load ZERO_CHAR
+						Output
+						JumpI to_hex
+
+/ saving 4 LSM bites to R variables from AC
+/ Ac <- (AC div 16)
+get_4_bites,			HEX 000
+						Store R
+						Load ZERO
+						Store TMP
+                        Load R
+						Skipcond 000	/ checking X sign
+                        Jump div_pos_ac
+                        Jump div_neg_ac
+
+/ AC > 0
+div_pos_ac,				Load R
+                        Subt SIXTEEN
+                        Skipcond 000
+                        Jump loop_pos_ac
+                        Jump end_loop
+
+loop_pos_ac,			Load TMP
+						Add ONE
+						Store TMP
+                        Load R
+                        Subt SIXTEEN
+                        Store R
+                        Jump div_pos_ac
+
+/ AC < 0
+div_neg_ac,				Load R
+                        Skipcond 000
+                        Jump end_loop
+                        Jump loop_neg_ac
+
+loop_neg_ac,			Load TMP
+						Subt ONE
+                        Store TMP
+                        Load R
+                        Add SIXTEEN
+                        Store R
+                        Jump div_neg_ac
+
+end_loop, 			    Load TMP
+                        JumpI get_4_bites
+
+/ Variables
+TMP,					DEC 	0
+R,						DEC 	0
+CURR_IDX,				DEC 	0
+CURR_PTR,				DEC 	0
+CHARS_WRITTEN, 			DEC		0
+
+/ Constans
+ZERO, 					DEC 	0
+ONE, 					DEC 	1
+SIXTEEN,				DEC 	16
+ZERO_CHAR,				DEC 	48
+X_CHAR,					DEC 	120
+
+LOOKUP,					DEC 	48	/ '0'
+						DEC 	49  / '1
+                        DEC 	50	/ '2
+                        DEC 	51	/ '3
+                        DEC 	52	/ '4
+                        DEC 	53	/ '5
+                        DEC 	54	/ '6
+                        DEC 	55	/ '7
+                        DEC 	56	/ '8'
+						DEC 	57  / '9
+                        DEC 	65	/ 'A'
+                        DEC 	66	/ 'B'
+                        DEC 	67	/ 'C'
+                        DEC 	68	/ 'D'
+                        DEC 	69	/ 'E'
+                        DEC 	70	/ 'F'
+
+LOOKUP_PTR, 			HEX 	70
+BUFF_SIZE,				DEC 	4
+BUF_PTR,				DEC 	150

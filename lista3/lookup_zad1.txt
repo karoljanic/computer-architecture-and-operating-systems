@@ -1,0 +1,24 @@
+/dev zawiera pliki urzadzen podlaczonych do systemu lub pliki specjalne(np random)
+    nie sa to zwykle pliki - sa to pliki specjalne, nie dziala tam read/write, wysyla sie tam byte'y
+
+/proc to iluzoryczny system plikow, ktore de facto nie istnieje na dysku, jadro tworzy te pliki w pamieci
+    i tam trzymane sa dane o systemie, np. obciazenie core'ow czy czestotliwosc ich pracy
+
+/sys informacje hardware'owe usystematyzowane hierarchicznie, zawiera czesc informacji co /proc
+    ale w proc te dane sa 'rozproszone'
+
+Show all partitions:
+ls -1 /dev/nvme*
+
+First disk sector:
+sudo dd if=/dev/nvme0n1 bs=512 count=1 | hexdump -C
+
+dd = convert and copy file
+if = input file
+bs = read as bytes
+count = copy only N blocks
+hexdump -C = displaying file in canonical HEX+ASCII format
+
+cat /proc/meminfo
+cat /proc/cpuinfo
+cat /proc/partitions

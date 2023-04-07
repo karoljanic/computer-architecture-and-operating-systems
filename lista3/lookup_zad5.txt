@@ -1,0 +1,4 @@
+mkfifo FIFO
+
+cat FIFO
+cat > FIFO

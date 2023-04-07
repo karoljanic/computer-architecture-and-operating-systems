@@ -1,0 +1,3 @@
+/home/karoljanic/Documents/akiso/lista5/lsh/build/CMakeFiles/main.dir
+/home/karoljanic/Documents/akiso/lista5/lsh/build/CMakeFiles/edit_cache.dir
+/home/karoljanic/Documents/akiso/lista5/lsh/build/CMakeFiles/rebuild_cache.dir

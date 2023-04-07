@@ -1,0 +1,10 @@
+# ninja log v5
+1	64	1671613701804868790	CMakeFiles/main.dir/src/main.c.o	6484b78b4f22f131
+1	68	1671613701814868745	CMakeFiles/main.dir/src/lsh.c.o	2f0d497a60675ddb
+6	74	1671613701814868745	CMakeFiles/main.dir/src/tokenizer.c.o	b487afa09125488a
+2	69	1671613701814868745	CMakeFiles/main.dir/src/reader.c.o	9bc7623bf90c349
+1	71	1671613701814868745	CMakeFiles/main.dir/src/parser.c.o	5e6c28679a6d408e
+0	72	1671613701814868745	CMakeFiles/main.dir/src/built-in-functions.c.o	5ba80f745edd1b28
+0	80	1671613701824868698	CMakeFiles/main.dir/src/jobs.c.o	62710041b4f1620b
+0	87	1671613701834868652	CMakeFiles/main.dir/src/executor.c.o	6b247d44dbc7a1f4
+87	119	1671613701864868517	main	7485053b3fc6a289

@@ -1,0 +1,18 @@
+ps = report snapshot of the current processes
+ps aux = all processes
+ps axjf = all processes with hierarchy tree
+
+Description:
+USER -> user owning process
+PID  -> ID of the process
+GPID -> ID of group of process
+%CPU -> CPU time used / process running time
+%MEM -> process size / physical machine memory
+VSZ  -> virtual memory usage
+RRS  -> resident set size = RAM memory usage
+TTY  -> controlling terminal
+STAT -> process state
+START -> process starting time/date
+TIME -> cumulative CPU time
+COMMAND -> command with all its arguments
+NIE -> user priority

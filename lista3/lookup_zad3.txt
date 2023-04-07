@@ -1,0 +1,16 @@
+cat > test.c
+
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    printf("Hello, World!\n");
+    return 0;
+}
+
+Ctrl+D
+
+gcc -Wall -pedantic test.c
+
+Wall = enables all compiler's warning messages, this option should always be used, in order to generate better code
+pedantic = issue all the warnings demanded by strict ISO C and ISO C++ (International Organization for Standardization)

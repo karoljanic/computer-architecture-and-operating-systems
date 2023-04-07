@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/built-in-functions.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/built-in-functions.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/built-in-functions.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/executor.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/executor.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/executor.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/jobs.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/jobs.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/jobs.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/lsh.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/lsh.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/lsh.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/main.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/main.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/main.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/parser.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/parser.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/parser.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/reader.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/reader.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/reader.c"
+},
+{
+  "directory": "/home/karoljanic/Documents/akiso/lista5/lsh/build",
+  "command": "/usr/bin/clang                 -Wall                -Wextra                -Wpedantic  -g -o CMakeFiles/main.dir/src/tokenizer.c.o -c /home/karoljanic/Documents/akiso/lista5/lsh/src/tokenizer.c",
+  "file": "/home/karoljanic/Documents/akiso/lista5/lsh/src/tokenizer.c"
+}
+]

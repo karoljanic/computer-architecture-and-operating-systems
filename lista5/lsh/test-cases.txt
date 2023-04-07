@@ -1,0 +1,22 @@
+echo text                               NICE
+clear                                   NICE
+ls -l | sort -n -k 5 | head -n 5        NICE
+ls -l > test.txt                        NICE
+< test.txt cat                          NICE
+< test.txt cat > test2.txt              NICE
+cat test2.txt | less                    NICE
+ls niematakiegofolderu 2> erors.txt     NICE  
+ls niematakiegofolderu                  NICE
+exit                                    NICE
+cd ..                                   NICE 
+cd build                                NICE
+CTRL+C - przerwanie sleepa              NICE
+CTRL+C - nie przerywa powloki           NICE
+CTRL+D - zamyka powloke                 NICE
+wyslanie zadania na background          NICE
+CTRL+Z - zastopowanie procesu           NICE
+CTRL+C - przerywa proces                NICE
+fg z % i bez %                          NICE
+bg z % i bez %                          NICE
+kill z %                                NICE
+jobs                                    NICE

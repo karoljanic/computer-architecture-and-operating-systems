@@ -1,0 +1,14 @@
+nasm -g -felf name.asm
+ld -m elf_i386 name.o -o name
+./name
+
+set disassembly-flavor intel
+break _start
+run
+display /i $pc
+layout asm
+layout regs
+focus cmd
+focus regs
+
+tui reg float

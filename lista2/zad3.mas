@@ -1,0 +1,106 @@
+/ Division With Remainder Calculator
+/ Karol Janic
+/ X = Y * Z + R: sign of R = X sign 
+/ Like x86 
+
+/ Entering Input Numbers
+						Clear
+						Input
+                    	Store X
+                    	Input
+                    	Store Y
+
+/ catching division by 0
+                    	Load Y
+                    	Skipcond 400
+                    	Jump division
+                    	Halt
+                        
+/ setting X_SIGN and X = |X|
+division,				Load X
+						Skipcond 000
+                        Jump x_is_positive
+                        Jump x_is_negative
+x_is_positive,			Load ZERO
+						Jump store_x_sign
+x_is_negative,			Subt X
+						Subt X
+                        Store X
+						Load ONE
+store_x_sign,			Store X_SIGN
+
+/ setting Y_SIGN and Y = |Y|
+						Load Y
+						Skipcond 000
+                        Jump y_is_positive
+                        Jump y_is_negative
+y_is_positive,			Load ZERO
+						Jump store_y_sign
+y_is_negative,			Subt Y
+						Subt Y
+                        Store Y
+						Load ONE
+						Load ONE
+store_y_sign,			Store Y_SIGN
+						
+                        Load X
+                        Store R
+                        Load ZERO
+                        Store Z
+
+/ dividing 
+division_condition,		Load R
+						Subt Y
+                        Skipcond 000
+                        Jump division_loop
+                        Jump division_end
+                        
+division_loop,			Load Z
+						Add ONE
+                        Store Z
+                        Load R
+                        Subt Y
+                        Store R
+                        Jump division_condition
+
+division_end,			Load X_SIGN
+						Skipcond 400
+                        Jump set_negative_reminder
+                        Jump reminder_sign_set
+                        
+/ setting reminder(R) sign                    
+set_negative_reminder,	Load R
+						Subt R
+                        Subt R
+                        Store R
+                        
+reminder_sign_set,		Load X_SIGN
+						Add Y_SIGN
+                        Subt ONE
+                        Skipcond 400
+                        Jump z_sign_set
+                        Jump set_z_sign
+                        
+/ setting result(Z) sign   
+set_z_sign,				Load Z
+						Subt Z
+                        Subt Z
+                        Store Z
+                        
+z_sign_set,				Load Z
+                        Output
+                        Load R
+                        Output
+						Halt					
+
+/ Variables 
+X, 						DEC 	0
+Y, 						DEC 	0	
+Z, 						DEC 	0
+R, 						DEC 	0
+X_SIGN,					DEC		0		/ 0 -> '+'; 1 -> '-'
+Y_SIGN,					DEC		0		/ 0 -> '+'; 1 -> '-'
+
+/ Constans
+ZERO, 					DEC 	0
+ONE, 					DEC 	1
